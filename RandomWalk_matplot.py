@@ -239,12 +239,6 @@ def train_model(network_data, feature_dic, log_name):
     # 获取训练节点对
     train_pairs = generate_pairs(all_walks, vocab, args.window_size)
 
-# 供外部文件调用训练集数据处理后的结果
-def pre_trained(file_name):
-    training_data = load_training_data(file_name + '/train.txt')
-
-    return training_data
-
 
 # 主函数
 if __name__ == '__main__':
@@ -252,7 +246,6 @@ if __name__ == '__main__':
     # 确定数据集所在文件夹位置
     print(args)
     file_name = args.input
-    # pre_trained(file_name)                            # 供外部测试文件调用使用
     # 把特征数据置为空
     feature_dic = None
     # 定义日志文件名
